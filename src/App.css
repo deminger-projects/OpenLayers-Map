@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+html,
+body {
+  margin: 0;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button{
+  position: relative;
+  width: 120px;
+  background-color:#f2efe9;
+  border-color: #f2efe9;
+  border-radius: 4px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input_my{
+  position: relative;
+  width: 150px;
+}
+
+#mereni_delky_comp{
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  width: 170px;
+  padding: 10px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.mereni_delky_items{
+  position: relative;
+  padding: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.swtich_button{
+  position: relative;
+  text-align: center;
+  padding: 10px;
+}
+
+#my_components{
+  position: relative;
+  top: 120px;
+  width: 200px;
+}
+
+.tlacitka_funkce{
+  position: relative;
+  padding-left: 10px;
 }
