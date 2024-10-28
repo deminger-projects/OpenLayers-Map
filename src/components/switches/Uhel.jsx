@@ -1,49 +1,31 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Uhel(props){
 
-    const [jednotktky_switch, set_jednotktky_switch] = useState(true)
+    const [jednotky_switch, set_jednotky_switch] = useState(true)
 
-    const [uhel_jednotky, set_delka_jednotky] = useState("")
-    const [uhel_hodnota, set_delka_hodnota] = useState("")
-
-    const is_first_load = useRef(true)
+    const [uhel_jednotky, set_uhel_jednotky] = useState("°")
+    const [uhel_hodnota, set_uhel_hodnota] = useState(0)
 
     useEffect(() => {
 
-        switch(jednotktky_switch){
-            case true:
-                if(!is_first_load.current){
-                    set_delka_hodnota(Math.round(props.hodnota * Math.PI / 180 * 100) / 100 )
-                    set_delka_jednotky("°")
-                }else{
-                    set_delka_hodnota(props.hodnota)
-                    set_delka_jednotky("°")
-                    is_first_load.current = false
-                }
-
-                break
-
-            case false:
-                if(!is_first_load.current){
-                    set_delka_hodnota(Math.round(props.hodnota * 180 / Math.PI))
-                    set_delka_jednotky("rad")
-                }else{
-                    set_delka_hodnota(props.hodnota)
-                    set_delka_jednotky("rad")
-                    is_first_load.current = false
-                }
-
-                break
-
-            default:
-                set_delka_hodnota(props.hodnota)
-                set_delka_jednotky("°")
-                
-                break
+        if(jednotky_switch === true){
+            set_uhel_hodnota(Math.round(props.hodnota * 100) / 100)
+            set_uhel_jednotky("°")
         }
 
-    }, [jednotktky_switch, props.hodnota])
+        if(jednotky_switch === false){
+            set_uhel_hodnota(Math.round(props.hodnota * (Math.PI / 180) * 100) / 100 )
+            set_uhel_jednotky("rad")
+        }
+
+    }, [jednotky_switch])
+
+
+    useEffect(() => {
+        set_uhel_hodnota(Math.round(props.hodnota * 100) / 100)
+
+    }, [props.hodnota])
 
     return(
         <>
@@ -52,7 +34,7 @@ export default function Uhel(props){
                 <input className="input_my" value={uhel_hodnota + " " + uhel_jednotky} id='delka' type="text" disabled="disabled"/>
 
                 <div className="swtich_button">
-                    <button className='button' onClick={(e) => set_jednotktky_switch(!jednotktky_switch)}>Stupně/Radianty</button>
+                    <button className='button' onClick={(e) => set_jednotky_switch(!jednotky_switch)}>Stupně/Radianty</button>
                 </div>
             </div>
         </>

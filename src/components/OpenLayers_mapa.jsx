@@ -11,10 +11,6 @@ import Mereni_uhlu from './funkcni_komponenty/Mereni_uhlu';
 
 import { useEffect, useRef, useState } from 'react';
 
-//azimuth ukazuje spatne udeje
-//uhel je taky spatne             
-//delka dost mozna taky
-
 export default function OpenLayers_mapa(){
   
   const [delka_gate, set_delka_gate] = useState(false)

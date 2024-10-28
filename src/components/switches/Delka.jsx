@@ -1,49 +1,32 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Delka(props){
 
-    const [jednotktky_switch, set_jednotktky_switch] = useState(true)
+    const [jednotky_switch, set_jednotky_switch] = useState(true)
  
-    const [delka_jednotky, set_delka_jednotky] = useState("")
-    const [delka_hodnota, set_delka_hodnota] = useState("")
-
-    const is_first_load = useRef(true)
+    const [delka_jednotky, set_delka_jednotky] = useState("km")
+    const [delka_hodnota, set_delka_hodnota] = useState(0)
 
     useEffect(() => {
 
-        switch(jednotktky_switch){
-            case true:
-                if(!is_first_load.current){
-                    set_delka_hodnota(Math.round(props.hodnota * 1.609344 * 100) / 100 )
-                    set_delka_jednotky("km")
-                }else{
-                    set_delka_hodnota(props.hodnota)
-                    set_delka_jednotky("km")
-                    is_first_load.current = false
-                }
-
-                break
-
-            case false:
-                if(!is_first_load.current){
-                    set_delka_hodnota(Math.round(props.hodnota * 0.621371 * 100) / 100)
-                    set_delka_jednotky("m")
-                }else{
-                    set_delka_hodnota(props.hodnota)
-                    set_delka_jednotky("m")
-                    is_first_load.current = false
-                }
-
-                break
-
-            default:
-                set_delka_hodnota(props.hodnota)
-                set_delka_jednotky("km")
-                
-                break
+        if(jednotky_switch === true){
+            console.log(props.hodnota * 1.609344)
+            set_delka_hodnota(Math.round(props.hodnota * 100) / 100)
+            set_delka_jednotky("km")
         }
 
-    }, [jednotktky_switch, props.hodnota])
+        if(jednotky_switch === false){
+            set_delka_hodnota(Math.round(props.hodnota * 0.621371 * 100) / 100)
+            set_delka_jednotky("m")
+        }
+
+    }, [jednotky_switch])
+
+
+    useEffect(() => {
+        set_delka_hodnota(props.hodnota)
+
+    }, [props.hodnota])
 
     return(
         <>
@@ -52,7 +35,7 @@ export default function Delka(props){
                 <input className="input_my" value={delka_hodnota + " " + delka_jednotky} id='delka' type="text" disabled="disabled"/>
 
                 <div className="swtich_button">
-                    <button className='button' onClick={(e) => set_jednotktky_switch(!jednotktky_switch)}>Kilometry/Míle</button>
+                    <button className='button' onClick={(e) => set_jednotky_switch(!jednotky_switch)}>Kilometry/Míle</button>
                 </div>
 
             </div>
