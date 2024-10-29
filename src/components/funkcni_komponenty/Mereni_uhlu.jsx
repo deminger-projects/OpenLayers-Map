@@ -85,90 +85,90 @@ export default function Mereni_uhlu(props){
         <>
 
             <div className='tlacitka_funkce'>
-                <button onClick={() => {props.uhel_gate_setter(!props.uhel_gate); props.delka_gate_setter(false); mereni_uhlu_gate_ref.current = !props.uhel_gate}} className='button'>Měření úhlu</button>
+                <button onClick={() => {props.uhel_gate_setter(!props.uhel_gate); props.delka_gate_setter(false); mereni_uhlu_gate_ref.current = !props.uhel_gate}} className='button'>Angle Measurement</button>
             </div>
     
 
             {props.uhel_gate ? <>
 
             <div id='mereni_delky_comp'>
-                <label htmlFor="x">Úsečka 1</label>
+                <label htmlFor="x">Line segment 1</label>
 
                 <br />
 
-                <label htmlFor="">Bod 1</label>
+                <label htmlFor="">Point 1</label>
 
                 <div className='mereni_delky_items'>
 
-                    <label htmlFor="usecka_1_bod_1_sirka">Zeměpisná šířka</label>
+                    <label htmlFor="usecka_1_bod_1_sirka">Latitude</label>
                     <input className='input_my' id='usecka_1_bod_1_sirka' onChange={(e) => {if(e.target.value >= -90 && e.target.value <= 90){set_usecka_1_bod_1_sirka(e.target.value)}}} value={usecka_1_bod_1_sirka} onClick={() => {current_input_index.current = 0}} type="text" />
 
-                    <label htmlFor="usecka_1_bod_1_delka">Zeměpisná délka</label>
+                    <label htmlFor="usecka_1_bod_1_delka">Longitude</label>
                     <input className='input_my' id='usecka_1_bod_1_delka' onChange={(e) => {if(e.target.value >= -180 && e.target.value <= 180){set_usecka_1_bod_1_delka(e.target.value)}}} value={usecka_1_bod_1_delka} onClick={() => {current_input_index.current = 0}} type="text" />
                 </div>
 
                 <br />
 
-                <label htmlFor="">Bod 2</label>
+                <label htmlFor="">Point 2</label>
 
                 <div className='mereni_delky_items'>
 
-                    <label htmlFor="usecka_1_bod_2_sirka">Zeměpisná šířka</label>
+                    <label htmlFor="usecka_1_bod_2_sirka">Latitude</label>
                     <input className='input_my' id='usecka_1_bod_2_sirka' onChange={(e) => {if(e.target.value >= -90 && e.target.value <= 90){set_usecka_1_bod_2_sirka(e.target.value)}}} value={usecka_1_bod_2_sirka} onClick={() => {current_input_index.current = 1}} type="text" />
 
-                    <label htmlFor="usecka_1_bod_2_delka">Zeměpisná délka</label>
+                    <label htmlFor="usecka_1_bod_2_delka">Longitude</label>
                     <input className='input_my' id='usecka_1_bod_2_delka' onChange={(e) => {if(e.target.value >= -180 && e.target.value <= 180){set_usecka_1_bod_2_delka(e.target.value)}}} value={usecka_1_bod_2_delka} onClick={() => {current_input_index.current = 1}} type="text" />
                 </div>
 
                 <br />
 
-                <label  htmlFor="x">Úsečka 2</label>
+                <label  htmlFor="x">Line segment 2</label>
 
                 <br />
 
-                <label htmlFor="">Bod 1</label>
+                <label htmlFor="">Point 1</label>
 
                 <div className='mereni_delky_items'>
                     
-                    <label htmlFor="usecka_2_bod_1_sirka">Zeměpisná šířka</label>
+                    <label htmlFor="usecka_2_bod_1_sirka">Latitude</label>
                     <input className='input_my' id='usecka_2_bod_1_sirka' onChange={(e) => {if(e.target.value >= -90 && e.target.value <= 90){set_usecka_2_bod_1_sirka(e.target.value)}}} value={usecka_2_bod_1_sirka} onClick={() => {current_input_index.current = 2}} type="text" />
 
-                    <label htmlFor="usecka_2_bod_1_delka">Zeměpisná délka</label>
+                    <label htmlFor="usecka_2_bod_1_delka">Longitude</label>
                     <input className='input_my' id='usecka_2_bod_1_delka' onChange={(e) => {if(e.target.value >= -180 && e.target.value <= 180){set_usecka_2_bod_1_delka(e.target.value)}}} value={usecka_2_bod_1_delka} onClick={() => {current_input_index.current = 2}} type="text" />
 
                 </div>
 
                 <br />
 
-                <label htmlFor="">Bod 2</label>
+                <label htmlFor="">Point 2</label>
 
                 <div className='mereni_delky_items'>
 
-                    <label htmlFor="usecka_2_bod_2_sirka">Zeměpisná šířka</label>
+                    <label htmlFor="usecka_2_bod_2_sirka">Latitude</label>
                     <input className='input_my' id='usecka_2_bod_2_sirka' onChange={(e) => {if(e.target.value >= -90 && e.target.value <= 90){set_usecka_2_bod_2_sirka(e.target.value)}}} value={usecka_2_bod_2_sirka} onClick={() => {current_input_index.current = 3}} type="text" />
 
-                    <label htmlFor="usecka_2_bod_2_delka">Zeměpisná délka</label>
+                    <label htmlFor="usecka_2_bod_2_delka">Longitude</label>
                     <input className='input_my' id='usecka_2_bod_2_delka' onChange={(e) => {if(e.target.value >= -180 && e.target.value <= 180){set_usecka_2_bod_2_delka(e.target.value)}}} value={usecka_2_bod_2_delka} onClick={() => {current_input_index.current = 3}} type="text" />
 
                 </div>
 
                 <br />
 
-                <label htmlFor="">Bod</label>
+                <label htmlFor="">Point</label>
 
                 <div className='mereni_delky_items'>
 
-                    <label htmlFor="bod_sirka">Zeměpisná šířka</label>
+                    <label htmlFor="bod_sirka">Latitude</label>
                     <input className='input_my' id='bod_sirka' onChange={(e) => set_bod_sirka(e.target.value)} value={bod_sirka} onClick={() => {current_input_index.current = 4}} type="text" />
 
-                    <label className='mereni_uhlu_items' htmlFor="bod_delka">Zeměpisná délka</label>
+                    <label className='mereni_uhlu_items' htmlFor="bod_delka">Longitude</label>
                     <input className='input_my' id='bod_delka' onChange={(e) => set_bod_delka(e.target.value)} value={bod_delka} onClick={() => {current_input_index.current = 4}} type="text" />
 
                 </div>
                 
                 <br />
 
-                <Uhel hodnota={uhel} my_label={"Úhel mezi body"}></Uhel>
+                <Uhel hodnota={uhel} my_label={"Angle between points"}></Uhel>
 
             </div>
 

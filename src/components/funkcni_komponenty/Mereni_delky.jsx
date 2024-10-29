@@ -84,34 +84,34 @@ export default function Mereni_delky(props){
     return(
         <>
             <div className='tlacitka_funkce'>
-                <button onClick={() => {props.uhel_gate_setter(false); props.delka_gate_setter(!props.delka_gate); mereni_delky_gate_ref.current = !props.delka_gate}} className='button'>Měření délky</button>
+                <button onClick={() => {props.uhel_gate_setter(false); props.delka_gate_setter(!props.delka_gate); mereni_delky_gate_ref.current = !props.delka_gate}} className='button'>Distance measurement</button>
             </div>
 
             {props.delka_gate ? <>
                 <div id='mereni_delky_comp'>
 
-                <label>Bod 1</label>
+                <label>Point 1</label>
 
                     <div className='mereni_delky_items'>
 
-                        <label htmlFor="bod1_y">Zeměpisná šířka</label>
+                        <label htmlFor="bod1_y">Latitude</label>
                         <input type="text" className='input_my' onChange={(e) => {if(e.target.value >= -90 && e.target.value <= 90){set_delka_bod1_sirka(e.target.value)}}} onClick={() => {current_input_index.current = 0}} value={delka_bod1_sirka} id='bod1_y'/>
 
-                        <label htmlFor="bod1_x">Zeměpisná délka</label>
+                        <label htmlFor="bod1_x">Longitude</label>
                         <input className='input_my' onChange={(e) => {if(e.target.value >= -180 && e.target.value <= 180){set_delka_bod1_delka(e.target.value)}}} onClick={() => {current_input_index.current = 0}} value={delka_bod1_delka} id="bod1_x" type="text" />
 
                     </div>
 
                     <br />
 
-                    <label>Bod 2</label>
+                    <label>Point 2</label>
                     
                     <div className='mereni_delky_items'>
 
-                        <label htmlFor="bod2_y">Zeměpisná šířka</label>
+                        <label htmlFor="bod2_y">Latitude</label>
                         <input className='input_my' onChange={(e) => {if(e.target.value >= -90 && e.target.value <= 90){set_delka_bod2_sirka(e.target.value)}}} value={delka_bod2_sirka} onClick={() => {current_input_index.current = 1}} id='bod2_y' type="text" />
 
-                        <label htmlFor="bod2_x">Zeměpisná délka</label>
+                        <label htmlFor="bod2_x">Longitude</label>
                         <input className='input_my' onChange={(e) => {if(e.target.value >= -180 && e.target.value <= 180){set_delka_bod2_delka(e.target.value)}}} value={delka_bod2_delka} onClick={() => {current_input_index.current = 1}} id='bod2_x' type="text" />
 
                     </div>

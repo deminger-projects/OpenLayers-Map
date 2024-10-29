@@ -34,7 +34,7 @@ export default function Uhel(props){
                 <input className="input_my" value={uhel_hodnota + " " + uhel_jednotky} id='delka' type="text" disabled="disabled"/>
 
                 <div className="swtich_button">
-                    <button className='button' onClick={(e) => set_jednotky_switch(!jednotky_switch)}>Stupně/Radianty</button>
+                    <button className='button' onClick={(e) => set_jednotky_switch(!jednotky_switch)}>Degrees/Radians</button>
                 </div>
             </div>
         </>

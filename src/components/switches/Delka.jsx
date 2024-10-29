@@ -31,11 +31,11 @@ export default function Delka(props){
     return(
         <>
             <div className='mereni_delky_items'>
-                <label htmlFor="delka">Délka</label>
+                <label htmlFor="delka">Distance</label>
                 <input className="input_my" value={delka_hodnota + " " + delka_jednotky} id='delka' type="text" disabled="disabled"/>
 
                 <div className="swtich_button">
-                    <button className='button' onClick={(e) => set_jednotky_switch(!jednotky_switch)}>Kilometry/Míle</button>
+                    <button className='button' onClick={(e) => set_jednotky_switch(!jednotky_switch)}>Kilometers/Miles</button>
                 </div>
 
             </div>
